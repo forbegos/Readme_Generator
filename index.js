@@ -11,27 +11,22 @@ inquirer
     {
       type: "input",
       message: "What was your motivation to build this project?",
-      name: "title",
+      name: "motivation",
     },
     {
       type: "input",
       message: "What problem does your project solve?",
-      name: "title",
+      name: "problemSolved",
     },
     {
       type: "input",
       message: "What did you learn making this project?",
-      name: "title",
+      name: "learned",
     },
   ])
   .then((response) => {
-    console.log(buildTitle(response));
+    console.log(buildReadme(response));
   });
-
-function buildTitle(response) {
-  let title = `# ${response.title}`;
-  return title;
-}
 
 function buildReadme(response) {
   let readme = `        
@@ -39,10 +34,8 @@ function buildReadme(response) {
 
 ## Description
 
-- What was your motivation?
-- Why did you build this project?
-- What problem does it solve?
-- What did you learn?
+This project was built becuase ${response.motivation}. This projects solves the problem of ${response.problemSolved}. 
+During the development of this project, one of the things I learned was ${response.learned}.
 
 ## Table of Contents
 
