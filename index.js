@@ -75,7 +75,7 @@ inquirer
 
 function buildReadme(response) {
   let lic = "";
-  console.log(response.license[0]);
+  // console.log(response.license[0]);
 
   switch (response.license[0]) {
     case "GNU":
