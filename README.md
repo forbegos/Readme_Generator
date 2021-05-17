@@ -1,10 +1,10 @@
         
-# Readme File Generator    
+# d    
 
 ## Description
 
-This project was built to make it easier for developers to build readme.md files. This projects solves the problem of wasting time building readme.md files. 
-During the development of this project, one of the things I learned was how to use the inquirer module.
+This project was built f. This projects solves the problem of f. 
+During the development of this project, one of the things I learned was f.
 
 ## Table of Contents
 
@@ -15,16 +15,25 @@ During the development of this project, one of the things I learned was how to u
 
 ## Installation
 
-First initialize npm by entering "npm init" in the terminal. Then install the inquirer module by entering "npm i inquirer"
+f
 
 ## Usage
 
-Run the command "node index.js" in the terminal.  Then answer the questions prompted.  The readme.md file will be built based on your answers and is automatically saved in your active directory.
+f
 
-![](./img/ScreenShot.png)
+![](f)
 
 ## Credits
 
-Fernando de Orbegoso
+f
 
-## License -> GNU
+## Github Repository
+
+https://www.github.com/fff
+
+## Contact Information
+
+fffff
+
+## License: 
+## 

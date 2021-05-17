@@ -51,12 +51,19 @@ inquirer
         "GNU",
         "MIT",
         "Mozilla Public License 2.0	",
-        "zLib License",
         "Creative Commons",
         "Artistic License",
       ],
       name: "license",
     },
+
+    {
+      type: "input",
+      message: "What is your Github username?",
+      name: "github",
+    },
+
+    { type: "input", message: "Please enter your email: ", name: "email" },
   ])
   .then((response) => {
     fs.writeFile("readme.md", buildReadme(response), (err) =>
@@ -67,6 +74,34 @@ inquirer
   });
 
 function buildReadme(response) {
+  let lic = "";
+  console.log(response.license[0]);
+
+  switch (response.license[0]) {
+    case "GNU":
+      lic =
+        "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+      break;
+    case "MIT":
+      lic =
+        "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+      break;
+    case "Mozilla Public License 2.0":
+      lic =
+        "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
+      break;
+    case "Creative Commons":
+      lic =
+        "[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)";
+      break;
+    case "Artistic License":
+      lic =
+        "[![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic%202.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)";
+      break;
+    default:
+      lic = "Not Defined";
+  }
+
   let readme = `        
 # ${response.title}    
 
@@ -96,6 +131,16 @@ ${response.usage}
 
 ${response.credits}
 
-## License -> ${response.license}`;
+## Github Repository
+
+https://www.github.com/${response.github}
+
+## Contact Information
+
+${response.email}
+
+## License: 
+## ${lic}\n`;
+
   return readme;
 }
